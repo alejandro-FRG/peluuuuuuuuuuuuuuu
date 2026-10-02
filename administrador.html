@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel del peluquero — Peluquería Ateneo</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding-bottom: 0; background: var(--bg); }
+  .admin-shell { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  .admin-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 10px; }
+  .admin-head a { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; }
+  .admin-tabs { display: flex; gap: 8px; margin: 24px 0 26px; }
+  .admin-tab { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 18px; font-size: 0.88rem; }
+  .admin-tab.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .dia-bloque { margin-bottom: 28px; }
+  .dia-titulo { font-family: "Fraunces", serif; font-size: 1.1rem; margin-bottom: 10px; text-transform: capitalize; }
+  .cita-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 14px 18px; margin-bottom: 10px; flex-wrap: wrap; }
+  .cita-row .cita-info { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+  .cita-row .hora { font-family: "Fraunces", serif; font-size: 1.1rem; min-width: 56px; }
+  .cita-row .cliente { font-weight: 600; }
+  .cita-row .meta { font-size: 0.8rem; color: var(--ink-soft); }
+  .cita-row.estado-cancelada { opacity: 0.5; }
+  .badge { font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+  .badge.cancelada { background: #F1DAD6; color: var(--busy); }
+  .cita-acciones { display: flex; gap: 6px; }
+  .cita-acciones button { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-s); padding: 7px 12px; font-size: 0.8rem; }
+  .cita-acciones button:hover { border-color: var(--ink); }
+  .vacio { color: var(--ink-soft); font-size: 0.9rem; padding: 24px; text-align: center; border: 1px dashed var(--line); border-radius: var(--radius-m); }
+  .filtro-peluquero { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .bloqueo-form { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 26px; }
+  .bloqueo-form input, .bloqueo-form select { padding: 10px 12px; border-radius: var(--radius-s); border: 1px solid var(--line); background: var(--surface); font-family: inherit; }
+  .bloqueo-chip { display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; margin: 0 8px 8px 0; font-size: 0.8rem; }
+  .bloqueo-chip button { background: none; border: none; color: var(--busy); font-size: 1rem; line-height: 1; }
+  .nota-auth { background: var(--accent-soft); border-radius: var(--radius-s); padding: 12px 16px; font-size: 0.82rem; margin-bottom: 26px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<div class="admin-shell">
+  <div class="admin-head">
+    <h2 style="margin:0;">Panel del peluquero</h2>
+    <a href="index.html">← Volver a la web</a>
+  </div>
+  <p class="nota-auth">
+    Esta demo no lleva login todavía. La estructura ya está preparada para añadir
+    autenticación (por ejemplo Supabase Auth) antes de pasar a producción, protegiendo
+    esta ruta <code>/administrador</code>.
+  </p>
+
+  <div class="admin-tabs">
+    <button class="admin-tab is-active" data-tab="citas">Citas</button>
+    <button class="admin-tab" data-tab="horarios">Horarios</button>
+  </div>
+
+  <div data-panel="citas">
+    <div class="filtro-peluquero" data-filtro-peluquero></div>
+    <div id="citas-lista"></div>
+  </div>
+
+  <div data-panel="horarios" style="display:none;">
+    <h3 style="font-size:1rem;">Bloquear un horario</h3>
+    <p style="font-size:0.88rem;">Bloquea un hueco puntual para que no se pueda reservar online.</p>
+    <div class="bloqueo-form">
+      <input type="date" id="bloq-fecha">
+      <select id="bloq-hora"></select>
+      <select id="bloq-peluquero"></select>
+      <button class="btn btn-primary" id="bloq-add">Bloquear</button>
+    </div>
+    <h3 style="font-size:1rem;">Horarios bloqueados</h3>
+    <div id="bloqueos-lista"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

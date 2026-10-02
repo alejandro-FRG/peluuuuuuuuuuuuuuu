@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peluquería Ateneo — Gijón</title>
+<meta name="description" content="Peluquería en Gijón, frente al Ateneo de La Calzada. Cortes, barbas y reserva de cita online.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#" class="brand" data-ir-a="inicio" data-negocio="nombre">Peluquería Ateneo</a>
+    <ul class="nav-links">
+      <li><button data-ir-a="cortes">Cortes</button></li>
+      <li><button data-ir-a="barbas">Barbas</button></li>
+      <li><button data-ir-a="servicios">Servicios</button></li>
+      <li><button data-ir-a="equipo">El equipo</button></li>
+      <li><button data-ir-a="galeria">Galería</button></li>
+      <li><button data-ir-a="ubicacion">Ubicación</button></li>
+    </ul>
+    <button class="btn btn-primary nav-cta" data-ir-a="reserva">Pedir cita</button>
+    <button class="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <ul>
+    <li><button data-ir-a="inicio">Inicio</button></li>
+    <li><button data-ir-a="cortes">Cortes</button></li>
+    <li><button data-ir-a="barbas">Barbas</button></li>
+    <li><button data-ir-a="servicios">Servicios</button></li>
+    <li><button data-ir-a="equipo">El equipo</button></li>
+    <li><button data-ir-a="galeria">Galería</button></li>
+    <li><button data-ir-a="ubicacion">Ubicación</button></li>
+    <li><button data-ir-a="reserva">Pedir cita</button></li>
+  </ul>
+</div>
+
+<!-- ============ INICIO ============ -->
+<section class="screen is-active" id="screen-inicio">
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="tagline">Peluquería de barrio, trato de siempre.</span>
+        <h1>Tu corte.<br>Tu estilo.</h1>
+        <p>Cortes actuales y trato personal en Gijón, frente al Ateneo de La Calzada.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-ir-a="reserva">Pedir cita</button>
+          <button class="btn btn-secondary" data-ir-a="cortes">Ver cortes</button>
+          <button class="btn btn-ghost" data-ir-a="equipo">Conócenos</button>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img id="hero-img" alt="Peluquero atendiendo a un cliente en el local">
+        <span class="tag">Frente al Ateneo de La Calzada</span>
+      </div>
+    </header>
+
+    <div class="detalle-humano"><div class="wrap" data-detalle-humano></div></div>
+
+    <div class="destacados-head">
+      <h2 style="margin:0;">Cortes destacados</h2>
+      <button class="btn btn-ghost btn-sm" data-ir-a="cortes">Ver todos →</button>
+    </div>
+    <div class="destacados-grid" data-destacados-home></div>
+
+    <div class="nsqh-launcher">
+      <div>
+        <h2>¿No sabes qué hacerte?</h2>
+        <p>Contesta cuatro preguntas rápidas y te decimos qué corte te va a quedar bien.</p>
+      </div>
+      <button class="btn btn-ghost" data-abrir-asesor>Empezar</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORTES ============ -->
+<section class="screen" id="screen-cortes">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Explora</span>
+      <h2>Cortes</h2>
+      <p>Elige tu estilo. Cada tarjeta tiene su foto real, precio y una ficha completa.</p>
+    </div>
+    <div class="filtros">
+      <button class="filtro-btn is-active" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="cortos">Cortos</button>
+      <button class="filtro-btn" data-filtro="medios">Medios</button>
+      <button class="filtro-btn" data-filtro="largos">Largos</button>
+      <button class="filtro-btn" data-filtro="degradados">Degradados</button>
+      <button class="filtro-btn" data-filtro="clasicos">Clásicos</button>
+    </div>
+    <div class="cortes-grid" data-cortes-grid></div>
+  </div>
+</section>
+
+<!-- ============ BARBAS ============ -->
+<section class="screen" id="screen-barbas">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Detalle</span>
+      <h2>Barbas</h2>
+      <p>Del perfilado rápido al arreglo completo.</p>
+    </div>
+    <div class="barbas-grid" data-barbas-grid></div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="screen" id="screen-servicios">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Sin sorpresas</span>
+      <h2>Servicios</h2>
+      <p>Precios claros, sin letra pequeña.</p>
+    </div>
+    <div data-servicios-grid style="display:grid;gap:14px;max-width:640px;"></div>
+  </div>
+</section>
+
+<!-- ============ EL EQUIPO ============ -->
+<section class="screen" id="screen-equipo">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Quiénes somos</span>
+      <h2>El equipo</h2>
+      <p>Tres personas, tres maneras de entender un buen corte.</p>
+    </div>
+    <div class="equipo-grid" data-equipo-grid></div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section class="screen" id="screen-galeria">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Del día a día</span>
+      <h2>Galería</h2>
+      <p>Así es el trabajo en el local.</p>
+    </div>
+    <div class="galeria-grid" data-galeria-grid></div>
+
+    <div class="screen-head" style="margin-top:56px;text-align:center;max-width:none;">
+      <span class="kicker">El cambio</span>
+      <h2>Arrastra para ver la diferencia</h2>
+    </div>
+    <div class="compare" data-compare>
+      <img data-before-img alt="Antes del corte">
+      <div class="after-wrap"><img data-after-img alt="Después del corte"></div>
+      <span class="label antes">ANTES</span>
+      <span class="label despues">DESPUÉS</span>
+      <div class="handle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UBICACIÓN ============ -->
+<section class="screen" id="screen-ubicacion">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Pásate a vernos</span>
+      <h2>Ubicación</h2>
+    </div>
+    <div class="ubicacion">
+      <div class="mapa-placeholder">
+        <span>Mapa de Google Maps<br>(pendiente de incrustar con API key propia)</span>
+      </div>
+      <div class="direccion-card">
+        <h3>La Calzada, Gijón</h3>
+        <p><strong data-location-address>Frente al Ateneo de La Calzada, Gijón, Asturias</strong></p>
+        <a class="btn btn-secondary" data-maps-link target="_blank" rel="noopener">Cómo llegar</a>
+        <div style="margin-top:22px;" data-horario-lista></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESERVA ============ -->
+<section class="screen" id="screen-reserva">
+  <div class="wrap">
+    <div class="screen-head">
+      <span class="kicker">Reserva</span>
+      <h2>Pedir cita</h2>
+    </div>
+
+    <a class="btn btn-ghost booking-externa" data-reserva-externa target="_blank" rel="noopener" style="display:none;">Reservar online (calendario externo) ↗</a>
+
+    <div class="booking-steps-bar"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <div class="booking-step" data-step="1">
+      <h3>¿Qué te hacemos?</h3>
+      <div class="servicio-pick-grid" data-servicio-pick-grid></div>
+    </div>
+
+    <div class="booking-step" data-step="2">
+      <h3>¿Con quién prefieres?</h3>
+      <div class="peluquero-pick-grid" data-peluquero-pick-grid></div>
+    </div>
+
+    <div class="booking-step" data-step="3">
+      <h3>¿Cuándo te viene bien?</h3>
+      <div class="calendario-head">
+        <button data-cal-prev aria-label="Mes anterior">‹</button>
+        <strong data-cal-mes></strong>
+        <button data-cal-next aria-label="Mes siguiente">›</button>
+      </div>
+      <div class="calendario-grid" data-calendario-grid></div>
+    </div>
+
+    <div class="booking-step" data-step="4">
+      <h3>Elige hora</h3>
+      <div class="resumen-card"><div id="resumen-fecha-hora"></div></div>
+      <div class="horarios-grid" data-horarios-grid></div>
+    </div>
+
+    <div class="booking-step" data-step="5">
+      <h3>¿A nombre de quién?</h3>
+      <div class="resumen-card" data-resumen-datos></div>
+      <div class="form-field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name"></div>
+      <div class="form-field"><label for="f-email">Correo electrónico</label><input id="f-email" name="email" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email"></div>
+      <div class="form-field"><label for="f-tel">Teléfono</label><input id="f-tel" name="telefono" type="tel" placeholder="600 000 000" autocomplete="tel"></div>
+    </div>
+
+    <div class="booking-step" data-step="6">
+      <h3>Todo listo</h3>
+      <p>Revisa que esté todo bien antes de confirmar.</p>
+      <div class="resumen-card" data-resumen-final></div>
+      <button class="btn btn-primary btn-block" data-booking-confirmar>Confirmar cita</button>
+    </div>
+
+    <div class="booking-step" data-step="7">
+      <div data-confirmacion></div>
+    </div>
+
+    <div class="booking-nav" data-booking-footer>
+      <button class="btn btn-ghost" data-booking-atras>Atrás</button>
+      <button class="btn btn-primary" data-booking-siguiente disabled>Continuar</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <h4 data-negocio="nombre">Peluquería Ateneo</h4>
+      <p data-location-address>Frente al Ateneo de La Calzada, Gijón, Asturias</p>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul class="foot-links">
+        <li><a data-whatsapp-link href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a data-ig-link href="#" target="_blank" rel="noopener">Instagram</a></li>
+        <li><button data-ir-a="ubicacion" style="background:none;border:none;color:inherit;padding:0;text-decoration:none;font-size:0.9rem;text-align:left;">Cómo llegar</button></li>
+      </ul>
+    </div>
+    <div>
+      <h4>El sitio</h4>
+      <ul class="foot-links">
+        <li><button data-ir-a="servicios" style="background:none;border:none;color:inherit;padding:0;font-size:0.9rem;text-align:left;">Servicios</button></li>
+        <li><button data-ir-a="cortes" style="background:none;border:none;color:inherit;padding:0;font-size:0.9rem;text-align:left;">Cortes</button></li>
+        <li><a href="administrador.html">Panel del peluquero</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">© <span data-anio-actual></span> Peluquería Ateneo. Demo desarrollada para uso comercial.</div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <button class="btn btn-primary btn-block" data-ir-a="reserva">Pedir cita</button>
+</div>
+
+<!-- ============ MODAL: corte / barba ============ -->
+<div class="modal-backdrop" data-modal-estilo>
+  <div class="modal-panel">
+    <button class="modal-close" data-modal-close aria-label="Cerrar">✕</button>
+    <div data-modal-body></div>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX GALERÍA ============ -->
+<div class="lightbox" data-lightbox>
+  <button class="lightbox-close" aria-label="Cerrar">✕</button>
+  <button class="lightbox-nav prev" aria-label="Anterior">‹</button>
+  <img alt="">
+  <p></p>
+  <button class="lightbox-nav next" aria-label="Siguiente">›</button>
+</div>
+
+<!-- ============ ASESOR "NO SÉ QUÉ HACERME" ============ -->
+<div class="asesor-backdrop" data-asesor-backdrop>
+  <div class="asesor-panel">
+    <button class="modal-close" data-modal-close aria-label="Cerrar">✕</button>
+    <div class="asesor-progress"><span></span><span></span><span></span><span></span></div>
+
+    <div class="asesor-step" data-step="1">
+      <h3>¿Cuánto quieres cortar?</h3>
+      <div class="opt-grid">
+        <button class="opt-btn" data-campo="largo" data-opt="poco">Un poco</button>
+        <button class="opt-btn" data-campo="largo" data-opt="medio">Normal</button>
+        <button class="opt-btn" data-campo="largo" data-opt="mucho">Bastante</button>
+      </div>
+    </div>
+    <div class="asesor-step" data-step="2">
+      <h3>¿Qué estilo buscas?</h3>
+      <div class="opt-grid">
+        <button class="opt-btn" data-campo="estilo" data-opt="limpio">Limpio</button>
+        <button class="opt-btn" data-campo="estilo" data-opt="natural">Natural</button>
+        <button class="opt-btn" data-campo="estilo" data-opt="atrevido">Atrevido</button>
+      </div>
+    </div>
+    <div class="asesor-step" data-step="3">
+      <h3>¿Qué longitud quieres?</h3>
+      <div class="opt-grid">
+        <button class="opt-btn" data-campo="actual" data-opt="corto">Corto</button>
+        <button class="opt-btn" data-campo="actual" data-opt="medio">Medio</button>
+        <button class="opt-btn" data-campo="actual" data-opt="largo">Largo</button>
+      </div>
+    </div>
+    <div class="asesor-step" data-step="4">
+      <h3>¿Llevas barba?</h3>
+      <div class="opt-grid">
+        <button class="opt-btn" data-campo="barba" data-opt="si">Sí</button>
+        <button class="opt-btn" data-campo="barba" data-opt="no">No</button>
+      </div>
+    </div>
+    <div data-asesor-resultado style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ============ PROBAR CORTE (foto + IA demo) ============ -->
+<div class="foto-ia-backdrop" data-foto-ia-backdrop>
+  <div class="foto-ia-panel">
+    <button class="modal-close" data-modal-close aria-label="Cerrar">✕</button>
+    <h3>Probar: <span data-foto-ia-estilo-nombre></span></h3>
+
+    <div data-foto-ia-paso="subir">
+      <p>Sube una foto tuya para ver una vista previa del estilo.</p>
+      <label class="foto-ia-upload">
+        <input type="file" accept="image/*" data-foto-ia-input>
+        <strong>Seleccionar foto</strong>
+        <p style="margin:6px 0 0;font-size:0.82rem;">JPG o PNG, mejor de frente y con buena luz.</p>
+      </label>
+    </div>
+
+    <div data-foto-ia-paso="preview" style="display:none;">
+      <div class="foto-ia-preview-wrap" data-foto-ia-preview-wrap></div>
+      <button class="btn btn-primary btn-block" data-foto-ia-generar>Generar vista previa</button>
+    </div>
+
+    <div data-foto-ia-paso="cargando" style="display:none;">
+      <div class="foto-ia-loading">
+        <div class="spinner"></div>
+        <p style="margin:0;">Generando tu preview…</p>
+      </div>
+    </div>
+
+    <div data-foto-ia-paso="resultado" style="display:none;">
+      <div class="foto-ia-preview-wrap" data-foto-ia-resultado-wrap></div>
+      <p style="font-size:0.78rem;text-align:center;">Vista previa orientativa (demo). La integración con generación de imagen real por IA se conectará más adelante mediante backend.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-ghost" data-foto-ia-otro>Probar otro corte</button>
+        <button class="btn btn-primary" data-foto-ia-reservar>Reservar este corte</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+<script>document.querySelector("[data-anio-actual]").textContent = new Date().getFullYear();</script>
+</body>
+</html>
